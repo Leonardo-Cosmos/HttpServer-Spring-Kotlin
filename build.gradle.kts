@@ -25,6 +25,11 @@ subprojects {
 	dependencyManagement {
 		dependencies {
 			dependency("net.logstash.logback:logstash-logback-encoder:6.6")
+
+			dependency("org.apache.kafka:kafka-clients:3.4.1")
+			dependency("io.cloudevents:cloudevents-json-jackson:2.4.1")
+			dependency("io.cloudevents:cloudevents-spring:2.3.0")
+			dependency("io.cloudevents:cloudevents-kafka:2.4.1")
 		}
 	}
 
