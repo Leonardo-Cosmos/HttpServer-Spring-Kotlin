@@ -1,19 +1,22 @@
-package com.cosmos.sample.http
+package com.cosmos.sample.redis.service
 
+import com.cosmos.sample.redis.config.SampleRedisConfig
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.data.redis.core.StringRedisTemplate
 import org.springframework.stereotype.Service
 import java.util.*
 import java.util.concurrent.TimeUnit
 
 @Service
-class SampleService @Autowired constructor(
+class SampleRedisService @Autowired constructor(
+    @Qualifier("sampleRedisTemplate")
     private val redisTemplate: StringRedisTemplate,
-    private val config: SampleConfig,
+    private val config: SampleRedisConfig,
 ) {
-    private val log: Logger = LoggerFactory.getLogger(SampleService::class.java)
+    private val log: Logger = LoggerFactory.getLogger(SampleRedisService::class.java)
 
     fun setText(text: String): String {
         val accessCode = UUID.randomUUID().toString()

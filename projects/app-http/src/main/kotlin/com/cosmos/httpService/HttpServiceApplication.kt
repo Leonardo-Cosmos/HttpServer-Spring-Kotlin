@@ -6,7 +6,7 @@ import org.springframework.boot.runApplication
 @SpringBootApplication(
     scanBasePackages = [
         "com.cosmos.httpService",
-        "com.cosmos.sample.http",
+        "com.cosmos.sample.redis",
     ]
 )
 class HttpServiceApplication
