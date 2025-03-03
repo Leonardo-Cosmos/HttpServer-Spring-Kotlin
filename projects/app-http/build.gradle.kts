@@ -9,7 +9,7 @@ version = "1.0.0-SNAPSHOT"
 
 dependencies {
     implementation(
-        project(":sample.http")
+        project(":sample.redis")
     )
 
     implementation("org.springframework.boot:spring-boot-starter-data-redis")

@@ -1,4 +1,4 @@
-package com.cosmos.sample.http
+package com.cosmos.sample.redis.controller
 
 internal object SampleConstants {
 
