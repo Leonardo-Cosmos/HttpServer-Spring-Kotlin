@@ -26,6 +26,9 @@ subprojects {
 		dependencies {
 			dependency("net.logstash.logback:logstash-logback-encoder:6.6")
 
+			dependency("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4")
+			dependency("mysql:mysql-connector-java:8.0.26")
+
 			dependency("org.apache.kafka:kafka-clients:3.4.1")
 			dependency("io.cloudevents:cloudevents-json-jackson:2.4.1")
 			dependency("io.cloudevents:cloudevents-spring:2.3.0")
