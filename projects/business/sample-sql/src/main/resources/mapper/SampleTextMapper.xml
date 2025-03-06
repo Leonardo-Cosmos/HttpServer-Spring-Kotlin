@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cosmos.sample.sql.mapper.SampleTextMapper">
+
+	<select id="findAll" resultType="com.cosmos.sample.sql.entity.SampleTextEntity">
+		SELECT * FROM sample_text
+	</select>
+
+	<select id="findByKey" parameterType="string" resultType="com.cosmos.sample.sql.entity.SampleTextEntity">
+		SELECT * FROM sample_text WHERE `key` = #{key}
+	</select>
+
+	<insert id="insert" parameterType="com.cosmos.sample.sql.entity.SampleTextEntity" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO sample_text (`key`, text) VALUES (#{key}, #{text})
+	</insert>
+
+	<update id="update" parameterType="com.cosmos.sample.sql.entity.SampleTextEntity">
+		UPDATE sample_text SET text=#{text} WHERE `key`=#{key}
+	</update>
+
+	<delete id="delete" parameterType="string">
+		DELETE FROM sample_text WHERE `key`=#{key}
+	</delete>
+
+</mapper>
