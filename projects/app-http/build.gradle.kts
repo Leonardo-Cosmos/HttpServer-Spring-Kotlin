@@ -12,6 +12,7 @@ dependencies {
         project(":sample.redis")
     )
 
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-logging")
     implementation("org.springframework.boot:spring-boot-starter-web")
 
@@ -19,6 +20,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     implementation("net.logstash.logback", "logstash-logback-encoder")
+
+    implementation(platform("io.micrometer:micrometer-tracing-bom:1.4.1"))
+    implementation("io.micrometer", "micrometer-tracing-bridge-brave") {
+        exclude("aopalliance")
+    }
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
